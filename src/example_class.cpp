@@ -4,15 +4,27 @@
 
 using namespace godot;
 
+//TODO: Add asserts
 void ExampleClass::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("print_type", "variant"), &ExampleClass::print_type);
+	ClassDB::bind_method(D_METHOD("connect", "port", "baud_rate"), &ExampleClass::connect);
 }
-ExampleClass::ExampleClass() {
+
+ExampleClass::ExampleClass() = default;
+
+ExampleClass::ExampleClass(const int port, const int baud_rate) {
 	print_line("Created");
+	arduino = new Arduino(port, baud_rate);
 }
 
 ExampleClass::~ExampleClass() {
 	print_line("Destroyed");
+	delete arduino;
+}
+
+void ExampleClass::connect(const int port, const int baud_rate) {
+	if (arduino != nullptr)
+		arduino = new Arduino(port, baud_rate);
 }
 
 void ExampleClass::print_type(const Variant &p_variant) const {
