@@ -54,6 +54,8 @@ target_sources(${LIBNAME}
     src/test_sprite.cpp
     src/test_sprite.hh
 )
+add_subdirectory(lib)
+target_link_libraries(${LIBNAME} PRIVATE lib_serial)
 
 # Fetch a list of the xml files to use for documentation and add to our target
 file(GLOB_RECURSE DOC_XML LIST_DIRECTORIES NO CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/doc_classes/*.xml")
