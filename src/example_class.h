@@ -11,8 +11,8 @@ protected:
 	static void _bind_methods();
 
 public:
-	ExampleClass() = default;
-	~ExampleClass() override = default;
+	ExampleClass();
+	~ExampleClass() override;
 
 	void print_type(const godot::Variant &p_variant) const;
 };
