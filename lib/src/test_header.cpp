@@ -30,10 +30,12 @@ std::string Arduino::readLine() {
 void Arduino::setDigitalValue(const int pin, const bool value) {
 }
 bool Arduino::getDigitalValue(const int pin) {
+	return false;
 }
 void Arduino::setAnalogValue(const int pin, const float value) {
 	if (value < 0 || value > 1)
 		return;
 }
 float Arduino::getAnalogValue(const int pin) {
+	return 0.0;
 }
