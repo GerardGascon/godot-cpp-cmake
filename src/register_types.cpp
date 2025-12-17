@@ -6,6 +6,7 @@
 #include <godot_cpp/godot.hpp>
 
 #include "example_class.h"
+#include "test_sprite.hh"
 
 using namespace godot;
 
@@ -14,6 +15,7 @@ void initialize_gdextension_types(ModuleInitializationLevel p_level) {
 		return;
 	}
 	GDREGISTER_CLASS(ExampleClass);
+	GDREGISTER_RUNTIME_CLASS(TestSprite);
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level) {

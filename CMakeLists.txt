@@ -51,6 +51,8 @@ target_sources(${LIBNAME}
     src/register_types.h
     src/example_class.cpp
     src/example_class.h
+    src/test_sprite.cpp
+    src/test_sprite.hh
 )
 
 # Fetch a list of the xml files to use for documentation and add to our target
